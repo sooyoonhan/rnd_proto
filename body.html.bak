@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no, address=no, email=no"/>
+
+<title>GameName adminTool</title>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+<script src='setting/js/lang.js'></script>
+
+<link rel='stylesheet' type='text/css' media='all' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'/>
+<link rel='stylesheet' type='text/css' media='all' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'/>
+<link rel='stylesheet' type='text/css' media='all' href='setting/css/container.css'/>
+</head>
+
+<body>
+<!--헤더시작-->
+<header>
+	<!--로고시작-->
+	<h1>
+		<a href="body.html">
+			GameName
+			<span>adminTool</span>
+		</a>
+	</h1>
+	<!--로고종료-->
+	
+	<!--로그인정보폼시작-->
+	<form id="loginInfoForm">
+		<fieldset>
+			<legend class="hidden">로그인정보</legend>
+			<h2 class="hidden">유저로그인정보</h2>
+			<p>
+				관리자아이디:asdfasdf(<span>슈퍼관리자</span>)
+				<button class="redBtn textOver" id="logoutBtn" title="로그아웃">로그아웃</button>
+			</p>
+		</fieldset>
+	</form>
+	<!--로그인정보폼종료-->
+
+	<!--left메뉴영역시작-->
+	<div id="leftWrap" class="touchScroll">
+
+		<!--언어선택폼시작-->
+		<form id="langSelForm">
+			<fieldset>
+				<legend class="hidden">언어선택폼</legend>
+				<select id="language">
+					<option value="ko">한국어</option>
+					<option value="en">영어</option>
+					<option value="jp">일본어</option>
+				</select>
+				<button class="hideBtn">변경</button>
+			</fieldset>
+		</form>
+		<!--언어선택폼종료-->
+
+		<!--메뉴시작-->
+		<nav>
+			<ul>
+				<li>
+					<a href="adminSetting/createAccount/index.html">
+						<span>관리자설정</span>
+						<i class="fa fa-angle-down" aria-hidden="true"></i>
+					</a>
+					<ul>
+						<li>
+							<a href="adminSetting/createAccount/index.html" target="contents">
+								<i class="fa fa-caret-right" aria-hidden="true"></i>
+								<span>계정생성</span>
+							</a>
+						</li>
+						<li>
+							<a href="adminSetting/manageMenu/index.html" target="contents">
+								<i class="fa fa-caret-right" aria-hidden="true"></i>
+								<span>메뉴관리</span>
+							</a>
+						</li>
+						<li>
+							<a href="adminSetting/createRights/index.html" target="contents">
+								<i class="fa fa-caret-right" aria-hidden="true"></i>
+								<span>계정권한생성</span>
+							</a>
+						</li>
+						<li>
+							<a href="adminSetting/mappingRights/index.html" target="contents">
+								<i class="fa fa-caret-right" aria-hidden="true"></i>
+								<span>권한별맵핑</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<!--메뉴종료-->
+
+	</div>
+	<!--left메뉴영역종료-->
+</header>
+<!--헤더종료-->
+
+<!--컨텐츠시작-->
+<section>
+
+	<!--페이지네비게이션시작-->
+	<h2 class="hidden">현재위치</h2>
+	<p id="navigation"><p>
+	<!--페이지네비게이션종료-->
+
+	<!--스크롤컨테이너시작-->
+	<div id="contentsWrap" class="touchScroll">
+		<iframe name="contents" src=""></iframe>
+	</div>
+	<!--스크롤컨테이너종료-->
+
+</section>
+<!--컨텐츠종료-->
+
+<!--로딩시작-->
+<div id="loader">
+	<div>
+		<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+	</div>
+</div>
+<!--로딩종료-->
+
+<script src='setting/js/container.js'></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no, address=no, email=no"/>
+
+<title>메뉴관리</title>
+
+<script src='../../setting/js/common.js'></script>
+<link rel='stylesheet' type='text/css' media='all' href='../../setting/css/page.css'/>
+</head>
+
+<body>
+<!--컨텐츠표시영역시작-->
+<div id="pannel">
+	<!--타이틀시작-->
+	<h2 class="titleBig">메뉴수정</h2>
+	<!--타이틀종료-->
+
+	<!--메뉴시작-->
+	<ul id="tabMenu">
+		<li><a href="index.html" class="ov">메뉴맵핑</a></li>
+		<li><a href="list.html">메뉴관리</a></li>
+	</ul>
+	<!--메뉴종료-->
+	
+	<!--폼시작-->
+	<form>
+		<fieldset>
+			<legend class="hidden">수정폼</legend>
+			<table class="dTable">
+				<tr>
+					<th scope="row" style="width:220px;">
+						<label for="rightsName">
+							<strong>*</strong>
+							메뉴 카테고리 선택:
+						</label>
+					</th>
+					<td>
+						<select>
+							<option>대메뉴</option>
+							<option>소메뉴</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="rightsName">
+							<strong>*</strong>
+							메뉴명:
+						</label>
+					</th>
+					<td class="aLeft">메뉴리스트</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="rightsName">
+							<strong>*</strong>
+							상위메뉴 선택:
+						</label>
+					</th>
+					<td>
+						<select>
+							<option>연결메뉴없음</option>
+							<option>메뉴리스트</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="rightsName">
+							<strong>*</strong>
+							노출순서 입력:
+						</label>
+					</th>
+					<td>
+						<input type="text" placeholder="노출순서를 입력하세요." autocomplete="off" id="rightsName"/>
+					</td>
+				</tr>
+			</table>
+			<div class="floatWrap">
+				<button class="blueBtn left">수정완료</button>
+			</div>
+		</fieldset>
+	</form>
+	<!--폼종료-->
+</div>
+<!--컨텐츠표시영역종료-->
+<script src='../../setting/js/adminSetting/createAccount/modify.js'></script>
+</body>
+</html>

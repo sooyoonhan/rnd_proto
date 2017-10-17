@@ -1,0 +1,55 @@
+/*공통*/
+* {margin:0; padding:0;}
+html * {box-sizing:border-box; font-size:13px;}
+html, body {height:100%;}
+body {padding:26px 20px 92px;}
+a {text-decoration:none;}
+
+/*공통클래스*/
+.hidden {display:block; width:0; height:0; font-size:0; line-height:0; text-indent:-20000px;}
+.floatWrap {overflow:hidden;}
+.left, .floatWrap li {float:left;}
+.floatWrap li {padding:0 5px 0 0;}
+.right {float:right;}
+.aLeft {text-align:left !important;}
+
+/*컨텐츠표시영역*/
+#pannel {overflow:hidden; border-radius:8px; overflow:hidden; background:#fff; padding:0 20px 40px;}
+
+/*타이틀*/
+.titleBig {background:#2f2f33; padding:16px 20px; color:#fff; font-weight:bold; font-size:20px; margin:0 -20px 20px;}
+.subTitle {border-left:4px solid #51a351; font-weight:bold; padding:0 6px; font-size:16px; margin:0 0 10px;}
+
+/*메뉴*/
+#tabMenu {overflow:hidden; margin:0 0 10px;}
+#tabMenu li {float:left;}
+#tabMenu li a {border:1px solid #ccc; display:block; height:100%; color:#666; background:#efefef; padding:10px;}
+#tabMenu li a.ov {border:1px solid #6e8f9e; color:#fff; background:#4f6377;}
+
+/*테이블디자인*/
+.dTable {border:1px solid #f00; width:100%; border-collapse:collapse; table-layout:fixed; margin:0 0 10px;}
+.dTable th, .dTable td {border:1px solid #f00; padding:10px;}
+.dTable th {border:1px solid #6e8f9e; background:#4f6377; color:#fff; text-align:center;}
+.dTable td {border:1px solid #ccc; text-align:center;}
+.dTable th label {color:#fff;}
+.dTable th label strong {color:#f89406; font-weight:bold;}
+
+/*폼관련*/
+input[type=text], select, input[type=password], input[type=tel] {display:block; width:100%; height:30px; border:1px solid #ccc; padding:0 5px; border-radius:0; -webkit-appearance:none; background:#fff;}
+input[type=radio], input[type=checkbox] {vertical-align:-2px;}
+button, .btn {display:inline-block; cursor:pointer; color:#fff; background:none; -webkit-appearance:none; border:none; height:30px; padding:0 10px !important;}
+.btn {line-height:30px;}
+.redBtn {background:#bd362f;}
+.blueBtn {background:#3a87ad;}
+.grayBtn {background:#999;}
+.orangeBtn {background:#f89406;}
+.greenBtn {background:#51a351;}
+.hideBtn {width:0; height:0 !important; font-size:0; line-height:0; text-indent:-20000px; position:absolute; left:0; top:0;}
+
+/*검색폼*/
+#searchForm {border:1px solid #ccc; background:#efefef; padding:10px; margin:0 0 10px;}
+#searchForm ul {margin:-5px 0 10px;}
+#searchForm li {border-bottom:1px dashed #ccc; position:relative; padding:5px 0;}
+#searchForm label {position:absolute; left:0; top:5px; display:block; height:30px; line-height:30px; font-weight:bold;}
+#searchForm span {display:block; width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+#searchForm strong {color:#bd362f;}
