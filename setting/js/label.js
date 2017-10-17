@@ -1,4 +1,5 @@
-$(function(){
+//검색폼라벨여백자동조정
+function labelPaddingChange(){
 	var li = $("#searchForm li");
 	var label = $("#searchForm li label");
 
@@ -7,4 +8,4 @@ $(function(){
 		var tempCss = labelWidth + 5 + "px";
 		li.eq(i).css("paddingLeft", tempCss);
 	}
-});
+}

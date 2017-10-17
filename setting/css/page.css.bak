@@ -9,6 +9,7 @@ a {text-decoration:none;}
 .hidden {display:block; width:0; height:0; font-size:0; line-height:0; text-indent:-20000px;}
 .floatWrap {overflow:hidden;}
 .left, .floatWrap li {float:left;}
+.floatWrap li {padding:0 5px 0 0;}
 .right {float:right;}
 .aLeft {text-align:left !important;}
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+모<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -8,11 +8,12 @@
 <title>GameName adminTool</title>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-<script src='setting/js/lang.js'></script>
+<script src='/setting/js/lang.js'></script>
+<script src='/setting/js/menuData.js'></script>
 
 <link rel='stylesheet' type='text/css' media='all' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'/>
 <link rel='stylesheet' type='text/css' media='all' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'/>
-<link rel='stylesheet' type='text/css' media='all' href='setting/css/container.css'/>
+<link rel='stylesheet' type='text/css' media='all' href='/setting/css/container.css'/>
 </head>
 
 <body>
@@ -33,7 +34,7 @@
 			<legend class="hidden">로그인정보</legend>
 			<h2 class="hidden">유저로그인정보</h2>
 			<p>
-				관리자아이디:asdfasdf(<span>슈퍼관리자</span>)
+				관리자아이디: asdfasdf(<span>슈퍼관리자</span>)
 				<button class="redBtn textOver" id="logoutBtn" title="로그아웃">로그아웃</button>
 			</p>
 		</fieldset>
@@ -61,31 +62,31 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="adminSetting/createAccount/index.html">
+					<a href="view/createAccount/index.html">
 						<span>관리자설정</span>
 						<i class="fa fa-angle-down" aria-hidden="true"></i>
 					</a>
 					<ul>
 						<li>
-							<a href="adminSetting/createAccount/index.html" target="contents">
+							<a href="view/createAccount/index.html" target="contents">
 								<i class="fa fa-caret-right" aria-hidden="true"></i>
 								<span>계정생성</span>
 							</a>
 						</li>
 						<li>
-							<a href="adminSetting/manageMenu/index.html" target="contents">
+							<a href="view/manageMenu/index.html" target="contents">
 								<i class="fa fa-caret-right" aria-hidden="true"></i>
 								<span>메뉴관리</span>
 							</a>
 						</li>
 						<li>
-							<a href="adminSetting/createRights/index.html" target="contents">
+							<a href="view/createRights/index.html" target="contents">
 								<i class="fa fa-caret-right" aria-hidden="true"></i>
 								<span>계정권한생성</span>
 							</a>
 						</li>
 						<li>
-							<a href="adminSetting/mappingRights/index.html" target="contents">
+							<a href="view/mappingRights/index.html" target="contents">
 								<i class="fa fa-caret-right" aria-hidden="true"></i>
 								<span>권한별맵핑</span>
 							</a>
@@ -126,6 +127,6 @@
 </div>
 <!--로딩종료-->
 
-<script src='setting/js/container.js'></script>
+<script src='/setting/js/container.js'></script>
 </body>
 </html>
