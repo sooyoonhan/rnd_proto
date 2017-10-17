@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no, address=no, email=no"/>
+
+<title>권한별맵핑</title>
+
+<script src='/setting/js/common.js'></script>
+</head>
+
+<body>
+<!--컨텐츠표시영역시작-->
+<div id="pannel">
+	<!--타이틀시작-->
+	<h2 class="titleBig">권한별맵핑</h2>
+	<!--타이틀종료-->
+	
+	<!--검색폼시작-->
+	<form id="searchForm">
+		<fieldset>
+			<legend class="hidden">검색폼</legend>
+			<ul>
+				<li>
+					<label for="auth_seq">
+						<span title="권한명 입력">
+							권한 선택
+						</span>
+					</label>
+					<select id="auth_seq">
+						<option>권한리스트</option>
+					</select>
+				</li>
+			</ul>
+			<button class="blueBtn" id="loadBtn">불러오기</button>
+		</fieldset>
+	</form>
+	<!--검색폼종료-->
+
+	<!--검색결과표시시작-->
+	<form>
+		<fieldset>
+			<legend class="hidden">노출메뉴셋팅폼</legend>
+			<h3 class="subTitle">권한리스트 노출메뉴 선택</h3>
+			<table class="dTable">
+				<tr>
+					<th scope="row" style="width:220px;">
+						<input type="checkbox"/> 대메뉴명
+					</th>
+					<td>
+						<ul class="floatWrap">
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" style="width:220px;">
+						<input type="checkbox"/> 대메뉴명
+					</th>
+					<td>
+						<ul class="floatWrap">
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row" style="width:220px;">
+						<input type="checkbox"/> 대메뉴명
+					</th>
+					<td>
+						<ul class="floatWrap">
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+							<li><input type="checkbox"/> 서브메뉴명</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+
+			<button class="blueBtn" id="mappginBtn">적용완료</button>
+		</fieldset>
+	</form>
+	<!--검색결과표시종료-->
+</div>
+<!--컨텐츠표시영역종료-->
+<script src='/setting/js/view/mappingRights/index.js'></script>
+</body>
+</html>

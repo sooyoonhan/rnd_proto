@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no, address=no, email=no"/>
+
+<title>메뉴관리</title>
+
+<script src='/setting/js/common.js'></script>
+</head>
+
+<body>
+<!--컨텐츠표시영역시작-->
+<div id="pannel">
+	<!--타이틀시작-->
+	<h2 class="titleBig">메뉴관리</h2>
+	<!--타이틀종료-->
+
+	<!--메뉴시작-->
+	<ul id="tabMenu">
+		<li><a href="index.html">메뉴맵핑</a></li>
+		<li><a href="list.html" class="ov">메뉴관리</a></li>
+	</ul>
+	<!--메뉴종료-->
+	
+	<!--검색폼시작-->
+	<form id="searchForm">
+		<fieldset>
+			<legend class="hidden">검색폼</legend>
+			<ul>
+				<li>
+					<label for="menu_name">
+						<span title="권한명 입력">
+							메뉴명 입력
+						</span>
+					</label>
+					<input type="text" autocomplete="off" placeholder="메뉴명을 입력하세요." id="menu_name"/>
+				</li>
+			</ul>
+			<button class="blueBtn" id="searchBtn">검색하기</button>
+		</fieldset>
+	</form>
+	<!--검색폼종료-->
+
+	<!--검색결과표시시작-->
+	<table class="dTable" id="gridTable">
+		<tr>
+			<th scope="col">시퀀스</th>
+			<th scope="col">메뉴카테고리</th>
+			<th scope="col">메뉴명</th>
+			<th scope="col">상위메뉴명</th>
+			<th scope="col">노출순서</th>
+			<th scope="col">수정</th>
+		</tr>
+		<tr>
+			<th scope="row">999</th>
+			<td>소메뉴</td>
+			<td>메뉴명</td>
+			<td>상위메뉴명</td>
+			<td>23</td>
+			<td><a href="modify.html" class="btn orangeBtn">수정</a></td>
+		</tr>
+	</table>
+	<!--검색결과표시종료-->
+</div>
+<!--컨텐츠표시영역종료-->
+<script src='/setting/js/view/createAccount/list.js'></script>
+</body>
+</html>
