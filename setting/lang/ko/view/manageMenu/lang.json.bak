@@ -3,8 +3,7 @@
 		"titleBig": "메뉴맵핑",
 		"COL_depth": "메뉴 카테고리 선택:",
 		"SEL_depth": ["대메뉴", "소메뉴"],
-		"COL_menu_name": "메뉴 카테고리 선택:",
-		"SEL_menu_name": ["대메뉴", "소메뉴"],
+		"COL_menu_name": "메뉴 선택:",
 		"COL_prt_menu": "상위메뉴 선택:",
 		"COL_ord": "노출순서 입력:",
 		"PH_ord": "노출순서를 입력하세요."
@@ -12,9 +11,9 @@
 
 	"list.html":{
 		"titleBig": "메뉴관리",
-		"COL_menu_name": "메뉴명 입력:",
+		"COL_menu_name": "메뉴명 입력",
 		"PH_menu_name": "메뉴명을 입력하세요.",
-		"listTh": ["시퀀스", "메뉴카테고리", "메뉴명", "상위메뉴명", "노출순서", "수정"]
+		"gridTable": ["시퀀스", "메뉴카테고리", "메뉴명", "상위메뉴명", "노출순서", "수정"]
 	},
 
 	"modify.html":{

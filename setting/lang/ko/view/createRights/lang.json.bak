@@ -9,7 +9,7 @@
 		"titleBig": "계정권한관리",
 		"COL_auth_name": "권한명 입력",
 		"PH_auth_name": "권한명을 입력하세요.",
-		"listTh": ["시퀀스", "권한명", "수정"]
+		"gridTable": ["시퀀스_쮸쀼", "권한명", "수정"]
 	},
 
 	"modify.html":{

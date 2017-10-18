@@ -1,6 +1,6 @@
 {
 	"index.html":{
-		"titleBig": "계정생성_한국어_쮸쀼쮸쀼",
+		"titleBig": "계정생성",
 		"COL_id": "아이디 입력:",
 		"PH_id": "아이디를 입력하세요.",
 		"COL_passwd": "비밀번호 입력:",

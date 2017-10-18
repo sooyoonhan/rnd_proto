@@ -8,3 +8,6 @@ document.write("<link rel='stylesheet' type='text/css' media='all' href='/settin
 document.write("<script src='/setting/js/label.js'></script>");
 //서브페이지언어번역
 document.write("<script src='/setting/js/viewLanguage.js'></script>");
+
+//프로토콜호출URL
+var protocalURL = "http://106.241.53.172:3000";

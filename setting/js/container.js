@@ -31,24 +31,6 @@ getMenu(function(lang, error) {
 	lenderMenu(lang);
 }, false);
 
-getDepthMenuList(1, function(lang, error) {
-	//에러체크
-	if(error) {
-		alert(error);
-
-		//로더비활성화
-		loader.hide();
-		return false;
-	}
-
-	//전체메뉴리스트가져오기완료
-	console.log(lang);
-
-	//메뉴렌더링
-	//lenderMenu(lang);
-}, false);
-
-
 getMenuLangList(function(lang, error) {
 	//에러체크
 	if(error) {
@@ -60,7 +42,7 @@ getMenuLangList(function(lang, error) {
 	}
 
 	//전체메뉴리스트가져오기완료
-	console.log(lang);
+	//console.log(lang);
 
 	//메뉴렌더링
 	//lenderMenu(lang);

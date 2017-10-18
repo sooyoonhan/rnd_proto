@@ -258,7 +258,7 @@ function mappingMenuLang(menu, langMenu, callBack) {
 //menuData.json에서 메뉴 데이터 가져오기
 function getMenuJson(callBack)
 {
-	var path = "setting/lang/";
+	var path = "/setting/lang/";
 	
 	path += sessionStorage.getItem('langType') !== null ? sessionStorage.getItem('langType') : 'ko';
 	
