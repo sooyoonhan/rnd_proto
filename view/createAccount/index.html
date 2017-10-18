@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no, address=no, email=no"/>
+
+<title>계정생성</title>
+
+<script src='/setting/js/common.js'></script>
+</head>
+
+<body>
+<!--컨텐츠표시영역시작-->
+<div id="pannel">
+	<!--타이틀시작-->
+	<h2 class="titleBig">계정생성</h2>
+	<!--타이틀종료-->
+
+	<!--메뉴시작-->
+	<ul id="tabMenu">
+		<li><a href="index.html" class="ov">계정생성</a></li>
+		<li><a href="list.html">계정관리</a></li>
+	</ul>
+	<!--메뉴종료-->
+	
+	<!--폼시작-->
+	<form>
+		<fieldset>
+			<legend class="hidden">생성폼</legend>
+			<table class="dTable">
+				<tr>
+					<th scope="row" style="width:220px;">
+						<label for="id">
+							<strong>*</strong>
+							<span>아이디 입력:</span>
+						</label>
+					</th>
+					<td>
+						<input type="text" placeholder="아이디을 입력하세요." autocomplete="off" id="id"/>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="passwd">
+							<strong>*</strong>
+							<span>비밀번호 입력:</span>
+						</label>
+					</th>
+					<td>
+						<input type="password" placeholder="비밀번호를 입력하세요." autocomplete="off" id="passwd"/>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="auth_seq">
+							<strong>*</strong>
+							<span>권한설정 선택:</span>
+						</label>
+					</th>
+					<td>
+						<select id="auth_seq">
+							<option>설정권한</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="oper_name">
+							<strong>*</strong>
+							<span>담당자명 입력:</span>
+						</label>
+					</th>
+					<td>
+						<input type="text" placeholder="담당자명을 입력하세요." autocomplete="off" id="oper_name"/>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="phone_num">
+							<strong>*</strong>
+							<span>전화번호 입력:</span>
+						</label>
+					</th>
+					<td>
+						<input type="tel" placeholder="전화번호를 '-'없이 입력하세요." autocomplete="off" id="phone_num"/>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="mail">
+							<strong>*</strong>
+							<span>이메일 주소 입력:</span>
+						</label>
+					</th>
+					<td>
+						<input type="text" placeholder="이메일 주소를 입력하세요." autocomplete="off" id="mail"/>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="dnload_auth_yn">
+							<strong>*</strong>
+							<span>엑셀 다운로드 권한 선택:</span>
+						</label>
+					</th>
+					<td>
+						<select id="dnload_auth_yn">
+							<option value="0">권한없음</option>
+							<option value="1">권한부여</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+			<div class="floatWrap">
+				<button class="blueBtn left" id="insertBtn">생성완료</button>
+			</div>
+		</fieldset>
+	</form>
+	<!--폼종료-->
+</div>
+<!--컨텐츠표시영역종료-->
+<script src='/setting/js/view/createAccount/index.js'></script>
+</body>
+</html>

@@ -10,6 +10,7 @@
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
 <script src='setting/js/lang.js'></script>
 <script src='setting/js/label.js'></script>
+<script src='setting/js/menuData.js'></script>
 
 <link rel='stylesheet' type='text/css' media='all' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'/>
 <link rel='stylesheet' type='text/css' media='all' href='setting/css/container.css'/>
@@ -31,7 +32,7 @@
 				<input type="password" placeholder="비밀번호를 입력하세요." autocomplete="off"/>
 			</li>
 		</ul>
-		<button>로그인</button>
+		<button id="loginBtn">로그인</button>
 	</fieldset>
 </form>
 <!--로그인폼종료-->

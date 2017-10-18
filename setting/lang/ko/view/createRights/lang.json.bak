@@ -1,0 +1,22 @@
+{
+	"index.html":{
+		"titleBig": "계정권한생성",
+		"COL_auth_name": "권한명 입력:",
+		"PH_auth_name": "권한명을 입력하세요."
+	},
+
+	"list.html":{
+		"titleBig": "계정권한관리",
+		"COL_auth_name": "권한명 입력",
+		"PH_auth_name": "권한명을 입력하세요.",
+		"listTh": ["시퀀스", "권한명", "수정"]
+	},
+
+	"modify.html":{
+		"titleBig": "계정권한수정",
+		"COL_auth_name": "권한명 입력:",
+		"PH_auth_name": "권한명을 입력하세요."
+	},
+
+	"tabMenu": ["계정권한생성","계정권한관리"]
+}

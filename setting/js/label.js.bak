@@ -1,17 +1,24 @@
-/*
-	containerID: 컨테이너 ID값
-	컨테이너 ID 내 Label값에 맞춰 LI 내 padding_left 자동조절됨
-*/
-//Label정렬
-function labelResize(containerID){
-
-	var li = $("#" + containerID + " li");
-	var label = $("#" + containerID + " label");
+//검색폼라벨여백자동조정
+function labelPaddingChange(){
+	var li = $("#searchForm li");
+	var label = $("#searchForm li label");
 
 	for(var i=0; i<label.length; i++){
 		var labelWidth = label.eq(i).width();
 		var tempCss = labelWidth + 5 + "px";
 		li.eq(i).css("paddingLeft", tempCss);
 	}
+
+	console.log("라벨체인지!!!!!!!")
+			console.log("라벨체인지!!!!!!!")
+			console.log("라벨체인지!!!!!!!")
+			console.log("라벨체인지!!!!!!!")
+			console.log("라벨체인지!!!!!!!")
+
+	console.log("라벨체인지!!!!!!!")
+		console.log("라벨체인지!!!!!!!")
+
+	console.log("라벨체인지!!!!!!!")
+			console.log("라벨체인지!!!!!!!")
+			console.log("라벨체인지!!!!!!!")
 }
-labelResize("searchForm");

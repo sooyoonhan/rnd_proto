@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="format-detection" content="telephone=no, address=no, email=no"/>
+
+<title>계정권한생성</title>
+
+<script src='/setting/js/common.js'></script>
+</head>
+
+<body>
+<!--컨텐츠표시영역시작-->
+<div id="pannel">
+	<!--타이틀시작-->
+	<h2 class="titleBig">계정권한생성</h2>
+	<!--타이틀종료-->
+
+	<!--메뉴시작-->
+	<ul id="tabMenu">
+		<li><a href="index.html" class="ov">계정권한생성</a></li>
+		<li><a href="list.html">계정권한관리</a></li>
+	</ul>
+	<!--메뉴종료-->
+	
+	<!--폼시작-->
+	<form>
+		<fieldset>
+			<legend class="hidden">생성폼</legend>
+			<table class="dTable">
+				<tr>
+					<th scope="row" style="width:220px;">
+						<label for="auth_name">
+							<strong>*</strong>
+							<span>권한명 입력:</span>
+						</label>
+					</th>
+					<td>
+						<input type="text" placeholder="권한명을 입력하세요." autocomplete="off" id="auth_name"/>
+					</td>
+				</tr>
+			</table>
+			<div class="floatWrap">
+				<button class="blueBtn left" id="insertBtn">생성완료</button>
+			</div>
+		</fieldset>
+	</form>
+	<!--폼종료-->
+</div>
+<!--컨텐츠표시영역종료-->
+<script src='/setting/js/view/createRights/index.js'></script>
+</body>
+</html>

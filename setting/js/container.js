@@ -1,30 +1,31 @@
 //로더
 var loader = $("#loader");
+loader.hide();
 
 //언어셀렉트
 var language = $("#language");
 
-//언어팩로드
+////언어팩로드
 language.val(sessionStorage.getItem('langType') !== null ? sessionStorage.getItem('langType') : 'ko');
-getLang('menuname', function(lang, error){
-	//세션내용
-	console.log(sessionStorage);
-	
-	//에러체크
-	if(error){
-		alert(error);
-
-		//로더비활성화
-		loader.hide();
-		return false;
-	}
-
-	//언어팩로드완료
-	console.log(lang);
-
-	//로더비활성화
-	loader.hide();
-}, true);
+//getLang('menuname', function(lang, error){
+//	//세션내용
+//	console.log(sessionStorage);
+//	
+//	//에러체크
+//	if(error){
+//		alert(error);
+//
+//		//로더비활성화
+//		loader.hide();
+//		return false;
+//	}
+//
+//	//언어팩로드완료
+//	console.log(lang);
+//
+//	//로더비활성화
+//	loader.hide();
+//}, true);
 
 //언어팩변경
 language.on("change", function(e){
@@ -42,7 +43,7 @@ getMenu(function(lang, error) {
 		return false;
 	}
 
-	alert(lang);
+//	alert(lang);
 
 }, true);
 
