@@ -84,43 +84,31 @@ function btnsRefesh(){
 		//서버전달
 		console.log("메뉴등록전달변수▼");
 		console.log(JSON.stringify(param))
-
 		$.ajax({
 			url: protocalURL + "/adminSetting/menu/set",
 			contentType:"application/json",
-			data: JSON.stringify(param),
+			data: JSON.stringify({param: param}),
 			method:"POST",
-			error: function(){
-				   alert('Error loading XML document');
-				},
-			success:function(result){
-				try {
+			success:function(callback){
+				callback = JSON.parse(callback);
+				console.log(callback)
 
-						callBack(result);
-						
-				}
-				catch(e) {
-
-					callBack(null,e);
-
+				if(callback["result"] == 1){
+					//에러
+					alert("[Error]\n" + JSON.stringify(callback["msg"]));
+			
+					//로더활성화
+					parent.loader.show();
+					return false;
+				} else{
+					//정상작동
+					alertMsgPrint("insert");
+					
+					//로더활성화
+					parent.loader.hide();
+					return false;
 				}
 			}
 		});
-
-
-//		$.post(
-//			protocalURL + "/adminSetting/menu/set",
-//			{
-//				param: JSON.stringify(param)
-//			},
-//			function(callback){
-//				console.log(callback)
-//
-//				//로더비활성화
-//				parent.loader.hide();
-//			},
-//			"json"
-//		);
-//		console.log(protocalURL)
 	});
 }
