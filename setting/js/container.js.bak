@@ -5,7 +5,6 @@ var loader = $("#loader");
 var language = $("#language");
 
 //언어팩변경
-console.log(sessionStorage)
 language.val(sessionStorage.getItem('langType') !== null ? sessionStorage.getItem('langType') : 'ko');
 language.on("change", function(e){
 	e.preventDefault();
@@ -34,14 +33,14 @@ getMenu(function(lang, error) {
 
 //메뉴렌더링
 function lenderMenu(getMenuCallback){
-	console.log(getMenuCallback);
+	//console.log(getMenuCallback);
 	
 	//네비게이션컨테이너
 	var container = $("nav > ul");
 
 	var str = '';
 	var bigMenu = getMenuCallback["menu"];
-	console.log(bigMenu[1])
+
 	for(var i=0; i<bigMenu.length; i++){
 		str += '<li>';
 			//대메뉴렌더링

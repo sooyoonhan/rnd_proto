@@ -67,7 +67,7 @@ function lenderMenu(getMenuCallback){
 	}
 
 	//렌더링
-	container.append(str);
+	container.html(str);
 
 	//로더비활성화
 	loader.hide();
