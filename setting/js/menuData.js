@@ -17,7 +17,7 @@ function getMenu(callBack,isJson) {
 			return false;
 		}
 
-		getAuthMenu(1, function(data,error) {
+		getAjaxAuthMenu(1, function(data,error) {
 				if(error)
 				{
 					alert(error);
@@ -28,11 +28,15 @@ function getMenu(callBack,isJson) {
 				{
 					mappingMenuData(data,result,function(menuData) {
 
-						if(isJson)
-							callBack(JSON.stringify(menuData),null);
-						else
-							callBack(menuData,null);
-
+						if(menuData != null) {
+							if(isJson)
+								callBack(JSON.stringify(menuData),null);
+							else
+								callBack(menuData,null);
+						}
+						else {
+							callBack(null,"menu Data Null");
+						}
 					});
 				}
 
@@ -52,7 +56,7 @@ function getDepthMenuList(depth,callBack,isJson) {
 			return false;
 		}
 
-		getDepthMenu(depth, function(data,error) {
+		getAjaxDepthMenu(depth, function(data,error) {
 				if(error)
 				{
 					alert(error);
@@ -98,8 +102,41 @@ function getMenuLangList(callBack,isJson) {
 
 }
 
+function getMenuList(callBack,isJson) {
+	isJson = typeof isJson !== 'undefined' ? isJson : true; //디폴트값 설정
+
+	getMenuJson(function(result,error) {
+		if(error) {
+			callBack(null,error);
+			return false;
+		}
+
+		getAjaxMenuList( function(data,error) {
+				if(error)
+				{
+					alert(error);
+					return false;
+				}
+
+				if(data)
+				{
+					mappingMenuList(data,result,function(menuData) {
+
+						if(isJson)
+							callBack(JSON.stringify(menuData),null);
+						else
+							callBack(menuData,null);
+
+					});
+				}
+
+			});
+
+	});
+}
+
 //지정한 depth의 메뉴 리스트 가져오기 
-function getDepthMenu(depth_val, callBack) {
+function getAjaxDepthMenu(depth_val, callBack) {
 	
 	const jsonArg = { param:{ depth:depth_val } };
 	
@@ -130,7 +167,7 @@ function getDepthMenu(depth_val, callBack) {
 }
 
 //권한별 메뉴정보 가져오기 
-function getAuthMenu(auth_seqVal, callBack) {
+function getAjaxAuthMenu(auth_seqVal, callBack) {
 	
 	const jsonArg = { param:{ auth_seq:auth_seqVal } };
 	
@@ -148,6 +185,68 @@ function getAuthMenu(auth_seqVal, callBack) {
 		success:function(result){
 			try {
 
+					callBack(result);
+					
+			}
+			catch(e) {
+
+				callBack(null,e);
+
+			}
+		}
+	});
+}
+
+//전체 메뉴 리스트 가져오기
+function getAjaxMenuList( callBack ) {
+	
+	const jsonArg = { param:{ } };
+	
+	var param = JSON.stringify(jsonArg);
+	
+	$.ajax({
+		url:"http://106.241.53.172:3000/adminSetting/menu/list",
+		contentType:"application/json",
+		//datatype:"json",
+		data:param,
+		method:"POST",
+		error: function(){
+			   alert('Error loading XML document');
+			},
+		success:function(result){
+			try {
+					//alert(result);
+					callBack(result);
+					
+			}
+			catch(e) {
+
+				callBack(null,e);
+
+			}
+		}
+	});
+}
+
+//전체 메뉴 리스트 가져오기
+function getAjaxMenuSearch( callBack, menuName ) {
+	
+	const jsonArg = { param:{ menu_seq:menuName } };
+	
+	var param = JSON.stringify(jsonArg);
+	
+	$.ajax({
+		url:"http://106.241.53.172:3000/adminSetting/menu/search",
+		contentType:"application/json",
+		//datatype:"json",
+		data:param,
+		method:"POST",
+		error: function(){
+			   alert('Error loading XML document');
+			},
+		success:function(result){
+			try {
+					//alert(result);
 					callBack(result);
 					
 			}
@@ -256,8 +355,7 @@ function mappingMenuLang(menu, langMenu, callBack) {
 }
 
 //menuData.json에서 메뉴 데이터 가져오기
-function getMenuJson(callBack)
-{
+function getMenuJson(callBack) {
 	var path = "/setting/lang/";
 	
 	path += sessionStorage.getItem('langType') !== null ? sessionStorage.getItem('langType') : 'ko';
@@ -278,4 +376,113 @@ function getMenuJson(callBack)
 			var err = "menuData "+' '+error ;
 			callBack(null,err);
 		});
+}
+
+//메뉴 리스트와 메뉴 언어 파일 맵핑
+function mappingMenuList(menu,langMenu,callBack) {
+
+		const result = JSON.parse(menu);
+
+		var menuList = [];
+
+		result.data.forEach(function(val,i) {
+
+				const menuName = langMenu.menu.filter(function(value) {
+						return value.seq === val.MENU_SEQ;
+				});
+
+				if(menuName.length) {
+					val['menuName'] = menuName[0].menuName;
+					menuList.push(val);
+				}
+					
+
+		});
+
+		callBack(menuList);
+
+}
+
+//메뉴명 검색
+function searchMenuNameList(menuName, callBack, isJson) {
+
+	isJson = typeof isJson !== 'undefined' ? isJson : true; //디폴트값 설정
+
+	getMenuJson(function(result,error) {
+		if(error) {
+			callBack(null,error);
+			return false;
+		}
+
+		searchMenuName(menuName,result,function(menu) {
+
+			if(menu.length == 0) {
+				callBack(null,"menu Not Search");
+				return false;
+			}
+
+			getAjaxMenuSearch( function(data,error) {
+				if(error)
+				{
+					alert(error);
+					return false;
+				}
+
+				if(data)
+				{
+					mappingMenuList(data,result,function(menuData) {
+
+						if(isJson)
+							callBack(JSON.stringify(menuData),null);
+						else
+							callBack(menuData,null);
+
+					});
+				}
+
+			}, menu);
+
+
+		});
+
+		
+
+		// getAjaxAuthMenu(1, function(data,error) {
+		// 		if(error)
+		// 		{
+		// 			alert(error);
+		// 			return false;
+		// 		}
+
+		// 		if(data)
+		// 		{
+		// 			mappingMenuData(data,result,function(menuData) {
+
+		// 				if(isJson)
+		// 					callBack(JSON.stringify(menuData),null);
+		// 				else
+		// 					callBack(menuData,null);
+
+		// 			});
+		// 		}
+
+		// 	});
+
+	});
+
+}
+
+function searchMenuName(menuName, langMenu, callBack) {
+
+	var menuNameList = [];
+
+	langMenu.menu.forEach(function(val,i) {
+
+			if(val.menuName.indexOf(menuName) != -1)
+				menuNameList.push(val.seq);
+
+	});
+
+	callBack(menuNameList);
+
 }
