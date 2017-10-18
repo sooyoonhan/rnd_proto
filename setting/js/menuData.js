@@ -34,17 +34,17 @@ function getMenu(callBack,isJson)
 				if(data)
 				{
 					mappingMenuData(data,result,function(menuData) {
-						console.log(JSON.stringify(menuData));
+
+						if(isJson)
+							callBack(JSON.stringify(menuData),null);
+						else
+							callBack(menuData,null);
+
 					});
 				}
 
 			});
-
-
-			if(isJson)
-				callBack(JSON.stringify(result),null);
-			else
-				callBack(result,null);
+			
 		})
 		.fail(function(jqxhr,textStatus,error) { //실패
 			var err = "menuData "+' '+error ;
