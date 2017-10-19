@@ -31,7 +31,7 @@
 			<ul>
 				<li>
 					<label for="auth_name">
-						<span title="권한명 입력">
+						<span>
 							권한명 입력
 						</span>
 					</label>

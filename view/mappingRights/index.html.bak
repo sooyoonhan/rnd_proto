@@ -24,7 +24,7 @@
 			<ul>
 				<li>
 					<label for="auth_seq">
-						<span title="권한명 입력">
+						<span>
 							권한 선택
 						</span>
 					</label>

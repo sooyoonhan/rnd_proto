@@ -40,7 +40,7 @@ function loadMenuList(){
 
 //메뉴렌더링
 function lenderParentMenu(lang){
-	console.log(lang)
+	//console.log(lang)
 	
 	//상위메뉴렌더링
 	var container = $("#prt_menu");

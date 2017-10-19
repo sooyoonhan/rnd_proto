@@ -103,10 +103,6 @@ function btnsRefesh(){
 				} else{
 					//정상작동
 					alertMsgPrint("insert");
-					
-					//로더활성화
-					parent.loader.hide();
-					return false;
 				}
 			}
 		});

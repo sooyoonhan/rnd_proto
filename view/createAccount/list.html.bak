@@ -31,7 +31,7 @@
 			<ul>
 				<li>
 					<label for="id">
-						<span title="권한명 입력">
+						<span>
 							아이디 입력
 						</span>
 					</label>

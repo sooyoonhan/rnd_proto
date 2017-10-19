@@ -6,8 +6,6 @@ document.write("<link rel='stylesheet' type='text/css' media='all' href='https:/
 document.write("<link rel='stylesheet' type='text/css' media='all' href='/setting/css/page.css'/>");
 //검색폼Label길이값조절
 document.write("<script src='/setting/js/label.js'></script>");
-//서브페이지언어번역
-document.write("<script src='/setting/js/viewLanguage.js'></script>");
 //프로토콜호출결과언어번역
 document.write("<script src='/setting/js/alertMsg.js'></script>");
 

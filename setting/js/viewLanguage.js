@@ -1,4 +1,5 @@
-$(function(){
+
+//$(function(){
 	//URL경로파서
 	var urlParser = location.href;
 	urlParser = urlParser.split("/");
@@ -108,8 +109,12 @@ $(function(){
 			}
 
 			//GridHeader
+			var gridHeaderArr = new Array();
+//			for(i=0; i<keyJSON["gridTable"].length; i++){
+//				$("#gridTable tr").eq(0).find("th").eq(i).html(keyJSON["gridTable"][i]);
+//			}
 			for(i=0; i<keyJSON["gridTable"].length; i++){
-				$("#gridTable tr").eq(0).find("th").eq(i).html(keyJSON["gridTable"][i]);
+				gridHeaderArr.push(keyJSON["gridTable"][i]);
 			}
 
 			//서브타이틀
@@ -121,4 +126,4 @@ $(function(){
 			labelPaddingChange();
 		}
 	);
-})
+//})

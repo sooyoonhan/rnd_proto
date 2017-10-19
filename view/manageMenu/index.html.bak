@@ -39,8 +39,8 @@
 					</th>
 					<td>
 						<select id="depth">
-							<option>대메뉴</option>
-							<option>소메뉴</option>
+							<option value="1">대메뉴</option>
+							<option value="2">소메뉴</option>
 						</select>
 					</td>
 				</tr>

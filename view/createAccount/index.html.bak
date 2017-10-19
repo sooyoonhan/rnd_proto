@@ -113,7 +113,7 @@
 				</tr>
 			</table>
 			<div class="floatWrap">
-				<button class="blueBtn left">생성완료</button>
+				<button class="blueBtn left" id="insertBtn">생성완료</button>
 			</div>
 		</fieldset>
 	</form>

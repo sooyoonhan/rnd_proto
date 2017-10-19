@@ -8,6 +8,7 @@
 <title>메뉴관리</title>
 
 <script src='/setting/js/common.js'></script>
+<script src='/setting/js/menuData.js'></script>
 </head>
 
 <body>
@@ -31,7 +32,7 @@
 			<ul>
 				<li>
 					<label for="menu_name">
-						<span title="권한명 입력">
+						<span>
 							메뉴명 입력
 						</span>
 					</label>
@@ -62,9 +63,23 @@
 			<td><a href="modify.html" class="btn orangeBtn">수정</a></td>
 		</tr>
 	</table>
+	<div>
+		<ul>
+			<li><a href="#">처음</a></li>
+			<li><a href="#">이전</a></li>
+			<li><a href="#" class="ov">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#">다음</a></li>
+			<li><a href="#">끝</a></li>
+		</ul>
+		<p>23 of 99</p>
+	</div>
 	<!--검색결과표시종료-->
 </div>
 <!--컨텐츠표시영역종료-->
-<script src='/setting/js/view/createAccount/list.js'></script>
+<script src='/setting/js/view/manageMenu/list.js'></script>
 </body>
 </html>
