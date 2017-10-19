@@ -52,4 +52,28 @@ button, .btn {display:inline-block; cursor:pointer; color:#fff; background:none;
 #searchForm li {border-bottom:1px dashed #ccc; position:relative; padding:5px 0;}
 #searchForm label {position:absolute; left:0; top:5px; display:block; height:30px; line-height:30px; font-weight:bold;}
 #searchForm span {display:block; width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+#searchForm span:after {content:":";}
 #searchForm strong {color:#bd362f;}
+
+/*그리드리스트*/
+.gridPage {overflow:hidden;}
+.gridPage ul {overflow:hidden; float:left;}
+.gridPage ul li {float:left; margin-right:5px;}
+.gridPage ul li a {border:1px solid #ccc; display:block; min-width:30px; height:30px; text-align:center; color:#000; line-height:30px;}
+.gridPage ul li a.ov {background:#3a87ad; color:#fff; border:none;}
+.gridPage p {float:left; height:30px; line-height:30px;}
+.firstBtn, .prevBtn, .nextBtn, .lastBtn {border:none !important; padding:0 8px; background:#efefef; border-radius:4px;}
+/*<div class="gridPage">*/
+/*		<ul>*/
+/*			<li><a href="#">처음</a></li>*/
+/*			<li><a href="#">이전</a></li>*/
+/*			<li><a href="#" class="ov">1</a></li>*/
+/*			<li><a href="#">2</a></li>*/
+/*			<li><a href="#">3</a></li>*/
+/*			<li><a href="#">4</a></li>*/
+/*			<li><a href="#">5</a></li>*/
+/*			<li><a href="#">다음</a></li>*/
+/*			<li><a href="#">끝</a></li>*/
+/*		</ul>*/
+/*		<p>23 of 99</p>*/
+/*	</div>*/

@@ -54,3 +54,12 @@ button, .btn {display:inline-block; cursor:pointer; color:#fff; background:none;
 #searchForm span {display:block; width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 #searchForm span:after {content:":";}
 #searchForm strong {color:#bd362f;}
+
+/*그리드리스트*/
+.gridPage {overflow:hidden;}
+.gridPage ul {overflow:hidden; float:left;}
+.gridPage ul li {float:left; margin-right:5px;}
+.gridPage ul li a {border:1px solid #ccc; display:block; min-width:30px; height:30px; text-align:center; color:#000; line-height:30px;}
+.gridPage ul li a.ov {background:#3a87ad; color:#fff; border:none;}
+.gridPage p {float:left; height:30px; line-height:30px;}
+.firstBtn, .prevBtn, .nextBtn, .lastBtn {border:none !important; padding:0 8px; background:#efefef; border-radius:4px;}
