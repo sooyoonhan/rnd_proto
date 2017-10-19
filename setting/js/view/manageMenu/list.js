@@ -1,6 +1,34 @@
 //로더활성화
 //parent.loader.show();
-//console.log(gridHeaderArr)
+
+//그리드헤더
+var gridHeader;
+
+//URL경로파서
+var urlParser = location.href;
+urlParser = urlParser.split("/");
+
+var keyLength = urlParser.length;			//파서길이
+var sFolder = urlParser[keyLength-2];
+var nation = sessionStorage["langType"];
+
+//변수제거
+urlParser = null;
+keyLength = null;
+
+//불러올grid언어팩파일경로
+var gridUrl = "/setting/lang/" + nation + "/common/gridTitle.json";
+
+//버튼언어팩적용
+$.getJSON(
+	gridUrl,
+	function(callback){
+		//console.log(callback);
+		
+		//gridTitle변수저장
+		gridHeader = callback[sFolder];
+	}
+);
 
 //초기메뉴리스트불러오기
 getMenuList(function(lang, error) {
@@ -23,12 +51,29 @@ getMenuList(function(lang, error) {
 //결과렌더링
 function lenderGrid(callback){
 	console.log(callback);
+	console.log(callback[0])
 
 	var container = $("#gridTable");
 	var str = '';
-	for(var i=0; i<gridHeaderArr.length; i++){
-	
+
+	str += '<tr>';
+	for(var i=0; i<gridHeader.length; i++){
+		str += '<th scope="col">' + gridHeader[i] + '</th>';
 	}
+	str += '</tr>';
+
+	for(i=0; i<callback.length; i++){
+		str += '<tr>';
+			str += '<td>' + callback[i]["MENU_SEQ"] + '</td>';
+			str += '<td>' + callback[i]["DEPTH"] + '</td>';
+			str += '<td>' + callback[i]["menuName"] + '</td>';
+			str += '<td>' + callback[i]["PRT_MENU"] + '</td>';
+			str += '<td>' + callback[i]["ORD"] + '</td>';
+			str += '<td><a href="modify.html?seq=' + callback[i]["MENU_SEQ"] + '" class="btn orangeBtn">수정</a></td>';
+		str += '</tr>';
+	}
+
+	container.html(str);
 }
 
 

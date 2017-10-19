@@ -1,9 +1,8 @@
-
-//$(function(){
+$(function(){
 	//URL경로파서
 	var urlParser = location.href;
 	urlParser = urlParser.split("/");
-	
+
 	var keyLength = urlParser.length;			//파서길이
 	var sFolder = urlParser[keyLength-2];
 	var key = urlParser[keyLength-1];
@@ -31,9 +30,9 @@
 		}
 	);
 
-
 	//불러올언어팩파일경로
 	var url = "/setting/lang/" + nation + "/view/" + sFolder + "/lang.json";
+
 	//언어팩적용
 	$.getJSON(
 		url,
@@ -108,14 +107,10 @@
 				}
 			}
 
-			//GridHeader
-			var gridHeaderArr = new Array();
-//			for(i=0; i<keyJSON["gridTable"].length; i++){
-//				$("#gridTable tr").eq(0).find("th").eq(i).html(keyJSON["gridTable"][i]);
-//			}
-			for(i=0; i<keyJSON["gridTable"].length; i++){
-				gridHeaderArr.push(keyJSON["gridTable"][i]);
-			}
+	//		//GridHeader
+	//		for(i=0; i<keyJSON["gridTable"].length; i++){
+	//			gridHeaderArr.push(keyJSON["gridTable"][i]);
+	//		}
 
 			//서브타이틀
 			for(i=0; i<keyJSON["subTitle"].length; i++){
@@ -126,4 +121,4 @@
 			labelPaddingChange();
 		}
 	);
-//})
+})
