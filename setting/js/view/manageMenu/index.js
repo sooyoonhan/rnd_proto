@@ -2,7 +2,7 @@
 init();
 //개별페이지작동시작
 function pageView(){
-//	console.log("이제부턴 제가 작동됩니다.");
+	console.log("이제부턴 제가 작동됩니다.");
 
 	//메뉴리스트불러오기
 	loadMenuList();
@@ -10,54 +10,24 @@ function pageView(){
 		$.getJSON(
 			"/setting/lang/" + sessionStorage["langType"] + "/common/menuData.json",
 			function(callback){
-				//console.log("menuData.json로딩완료▼")
-				//console.log(callback)
+				console.log("menuData.json로딩완료▼")
+				console.log(callback)
 				
 				//메뉴렌더링
-				var container = $("#menu_name");
+				var container = $("#url");
 				var str = '';
 				for(var i=0; i<callback["menu"].length; i++){
-					str += '<option value="' + callback["menu"][i]["seq"] + '">' + callback["menu"][i]["menuName"] + '</option>'
+					str += '<option value="' + callback["menu"][i]["url"] + '">' + callback["menu"][i]["menuName"] + '(' + callback["menu"][i]["url"] + ')</option>'
 				}
 				container.html(str);
 
-				//상위메뉴리스트불러오기
-				getDepthMenuList(1, function(lang, error) {
-					//에러체크
-					if(error) {
-						alert(error);
+				//버튼갱신
+				btnsRefesh();
 
-						//로더비활성화
-						parent.loader.hide();
-						return false;
-					}
-
-					//메뉴렌더링
-					lenderParentMenu(lang);
-				}, false);
+				//로더비활성화
+				parent.loader.hide();
 			}
 		);
-	}
-
-	//메뉴렌더링
-	function lenderParentMenu(lang){
-//		console.log("menuData.json로딩완료▼")
-//		console.log(lang)
-		
-		//상위메뉴렌더링
-		var container = $("#prt_menu");
-		var str = '';
-		str += '<option value="0">연결메뉴없음</option>';
-		for(var i=0; i<lang.length; i++){
-			str += '<option value="' + lang[i]["seq"] + '">' + lang[i]["menuName"] + '</option>';
-		}
-		container.html(str);
-
-		//로더비활성화
-		parent.loader.hide();
-
-		//버튼갱신
-		btnsRefesh();
 	}
 
 	//버튼갱신
@@ -72,15 +42,25 @@ function pageView(){
 			
 			//전달변수
 			var param = {
-				menu_seq: $("#menu_name").val(),
+				menu_name: $("#menu_name").val(),
+				url: $("#url").val(),
 				depth: $("#depth").val(),
+				ord: $("#ord").val(),
 				prt_menu: $("#prt_menu").val(),
-				ord: $("#ord").val()
 			};
 			
 			//노출순서갱신
 			if(param.ord == ""){
 				param.ord = 1;
+			}
+
+			//오류값체크
+			//메뉴명미입력
+			if(param["menu_name"] == ""){
+				alert(languageJSON["alertMsg"]["#menu_name"]);
+				$("#menu_name").focus();
+				parent.loader.hide();
+				return false;
 			}
 
 			//서버전달
@@ -110,5 +90,4 @@ function pageView(){
 			});
 		});
 	}
-
 }

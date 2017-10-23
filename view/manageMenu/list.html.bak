@@ -46,6 +46,7 @@
 
 	<!--검색결과표시시작-->
 	<table class="dTable" id="gridTable">
+		<!--
 		<tr>
 			<th scope="col">시퀀스</th>
 			<th scope="col">메뉴카테고리</th>
@@ -62,9 +63,11 @@
 			<td>23</td>
 			<td><a href="modify.html" class="btn orangeBtn">수정</a></td>
 		</tr>
+		-->
 	</table>
 	<div class="gridPage">
 		<ul>
+			<!--
 			<li><a href="#" class="firstBtn">First</a></li>
 			<li><a href="#" class="prevBtn">Prev</a></li>
 			<li><a href="#" class="ov">1</a></li>
@@ -74,13 +77,13 @@
 			<li><a href="#">5</a></li>
 			<li><a href="#" class="nextBtn">Next</a></li>
 			<li><a href="#" class="lastBtn">Last</a></li>
+			-->
 		</ul>
 		<p>23 of 99</p>
 	</div>
 	<!--검색결과표시종료-->
 </div>
 <!--컨텐츠표시영역종료-->
-<script src='/setting/js/viewLanguage.js'></script>
 <script src='/setting/js/view/manageMenu/list.js'></script>
 </body>
 </html>

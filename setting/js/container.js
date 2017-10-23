@@ -111,7 +111,8 @@ function lenderMenu(getMenuCallback){
 	}
 
 	//렌더링
-	container.html(str);
+//	container.html(str);
+	container.append(str);
 
 	//로더비활성화
 	loader.hide();
