@@ -48,7 +48,7 @@ nav > ul > li.ov > a {padding-left:16px; color:#fff;}
 nav > ul > li.ov > ul {display:block;}
 nav > ul > li > a {height:100%; position:relative; padding:20px 30px 20px 20px; color:#a3a3a3;}
 nav > ul > li > a span {font-size:17px;}
-nav > ul > li > a i {position:absolute; right:20px; top:15px;}
+nav > ul > li > a i {position:absolute; right:20px; top:20px;}
 nav > ul > li > ul {background:#000; display:none;}
 nav > ul > li > ul a {color:#a3a3a3; padding:15px 20px;}
 nav > ul > li > ul a span {font-size:14px;}

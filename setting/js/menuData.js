@@ -10,40 +10,26 @@
 function getMenu(callBack,isJson) {
 	isJson = typeof isJson !== 'undefined' ? isJson : true; //디폴트값 설정
 	
-	
-	getMenuJson(function(result,error) {
-		if(error) {
-			callBack(null,error);
-			return false;
-		}
-
-		getAjaxAuthMenu(1, function(data,error) {
+	getAjaxAuthMenu(1, function(data,error) {
 				if(error)
 				{
 					alert(error);
 					return false;
 				}
-
 				if(data)
 				{
-					mappingMenuData(data,result,function(menuData) {
-
-						if(menuData != null) {
+						if(data != null) {
 							if(isJson)
-								callBack(JSON.stringify(menuData),null);
+								callBack(JSON.stringify(data),null);
 							else
-								callBack(menuData,null);
+								callBack(data,null);
 						}
 						else {
 							callBack(null,"menu Data Null");
 						}
-					});
 				}
 
 			});
-
-	});
-
 }
 
 //특정 depth의 메뉴 언어 리스트 가져오기

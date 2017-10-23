@@ -46,19 +46,6 @@
 				</tr>
 				<tr>
 					<th scope="row">
-						<label for="menu_name">
-							<strong>*</strong>
-							<span>메뉴 선택:</span>
-						</label>
-					</th>
-					<td>
-						<select id="menu_name">
-							<option>메뉴리스트</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">
 						<label for="prt_menu">
 							<strong>*</strong>
 							<span>상위메뉴 선택:</span>
@@ -68,6 +55,27 @@
 						<select id="prt_menu">
 							<option value="0">연결메뉴없음</option>
 						</select>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="menu_name">
+							<strong>*</strong>
+							<span>메뉴 선택:</span>
+						</label>
+					</th>
+					<td>
+						<input type="text" placeholder="메뉴명 입력" autocomplete="off"  id="menu_name"/>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="url">
+							<strong>*</strong>
+							<span>메뉴 선택:</span>
+						</label>
+					</th>
+					<td>
 					</td>
 				</tr>
 				<tr>
@@ -90,7 +98,6 @@
 	<!--폼종료-->
 </div>
 <!--컨텐츠표시영역종료-->
-<script src='/setting/js/viewLanguage.js'></script>
 <script src='/setting/js/view/manageMenu/index.js'></script>
 </body>
 </html>

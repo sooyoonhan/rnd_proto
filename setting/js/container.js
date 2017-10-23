@@ -50,19 +50,46 @@ getMenuLangList(function(lang, error) {
 
 //메뉴렌더링
 function lenderMenu(getMenuCallback){
-	//console.log(getMenuCallback);
+	getMenuCallback = JSON.parse(getMenuCallback);
+//	console.log(getMenuCallback);
+	
+	//getMenuCallback배열재정립
+	var mainMenu = {};
+
+	//대메뉴추출
+	mainMenu["menu"] = getMenuCallback["data"].filter(function(value){
+		return value.DEPTH === 1;
+	});
+
+	//메뉴데이터오브젝트생성
+	var menuData = mainMenu["menu"];
+
+	//현재메뉴에하위메뉴만들기
+	getMenuCallback["data"].forEach(function(val, i){
+		//현재대메뉴에하위메뉴들추출
+		const subMenuData = getMenuCallback["data"].filter(function(value){
+			return value.DEPTH === 2 && value.PRT_MENU === val.MENU_SEQ;
+		});
+
+		if(subMenuData.length){
+			menuData[i]["subMenu"] = subMenuData;
+		}
+	});
+
+	console.log(mainMenu)
+
 	
 	//네비게이션컨테이너
 	var container = $("nav > ul");
 
 	var str = '';
-	var bigMenu = getMenuCallback["menu"];
+	var bigMenu = mainMenu["menu"];
 
 	for(var i=0; i<bigMenu.length; i++){
 		str += '<li>';
 			//대메뉴렌더링
 			str += '<a href="' + bigMenu[i]["url"] + '">';
-				str += '<span>' + bigMenu[i]["menuName"] + '</span>';
+				str += '<span>' + bigMenu[i]["MENU_NAME"] + '</span>';
 				str += '<i class="fa fa-angle-down" aria-hidden="true"></i>';
 			str += '</a>';
 			//서브메뉴렌더링
@@ -72,9 +99,9 @@ function lenderMenu(getMenuCallback){
 				str += '<ul>';
 					for(var j=0; j<subMenu.length; j++){
 						str += '<li>';
-							str += '<a href="' + subMenu[j]["url"] + '" target="contents">';
+							str += '<a href="' + subMenu[j]["URL"] + '" target="contents">';
 								str += '<i class="fa fa-caret-right" aria-hidden="true"></i> ';
-								str += '<span>' + subMenu[j]["menuName"] + '</span>';
+								str += '<span>' + subMenu[j]["MENU_NAME"] + '</span>';
 							str += '</a>';
 						str += '</li>';
 					}
