@@ -1,22 +1,21 @@
 {
 	"index.html":{
-		"titleBig": "계정권한생성",
-		"COL_auth_name": "권한명 입력:",
-		"PH_auth_name": "권한명을 입력하세요."
+		"titleBig": "계정권한생성_쮸쀼쮸쀼",
+		"COL_auth_name": "권한명 입력:_쮸쀼쮸쀼",
+		"PH_auth_name": "권한명을 입력하세요._쮸쀼쮸쀼"
 	},
 
 	"list.html":{
-		"titleBig": "계정권한관리",
-		"COL_auth_name": "권한명 입력",
-		"PH_auth_name": "권한명을 입력하세요.",
-		"gridTable": ["시퀀스", "권한명", "수정"]
+		"titleBig": "계정권한관리_쮸쀼쮸쀼",
+		"COL_auth_name": "권한명 입력_쮸쀼쮸쀼",
+		"PH_auth_name": "권한명을 입력하세요._쮸쀼쮸쀼"
 	},
 
 	"modify.html":{
-		"titleBig": "계정권한수정",
-		"COL_auth_name": "권한명 입력:",
-		"PH_auth_name": "권한명을 입력하세요."
+		"titleBig": "계정권한수정_쮸쀼쮸쀼",
+		"COL_auth_name": "권한명 입력:_쮸쀼쮸쀼",
+		"PH_auth_name": "권한명을 입력하세요._쮸쀼쮸쀼"
 	},
 
-	"tabMenu": ["계정권한생성","계정권한관리"]
+	"tabMenu": ["계정권한생성_쮸쀼쮸쀼","계정권한관리_쮸쀼쮸쀼"]
 }

@@ -10,12 +10,16 @@ urlParser = urlParser.split("/");
 
 var keyLength = urlParser.length;			//파서길이
 var sFolder = urlParser[keyLength-2];		//메뉴폴더명
-var key = urlParser[keyLength-1];			//뷰페이지번역할페이지파일명
+var keyTemp = urlParser[keyLength-1];			
+keyTemp = keyTemp.split("?seq=");
+var key = keyTemp[0];								//뷰페이지번역할페이지파일명
+var seq = keyTemp[1];							//조회시퀀스
 var nation = sessionStorage["langType"];	//국가코드
 
 //변수제거
 urlParser = null;
 keyLength = null;
+keyTemp = null;
 
 //언어팩초기화
 function init(){

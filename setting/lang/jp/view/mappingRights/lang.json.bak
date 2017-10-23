@@ -1,7 +1,7 @@
 {
 	"index.html":{
-		"titleBig": "권한별 맵핑_쮸쀼쮸쀼",
-		"COL_auth_seq": "권한 선택_쮸쀼쮸쀼",
-		"subTitle": ["권한리스트 노출메뉴 선택_쮸쀼쮸쀼"]
+		"titleBig": "권한별 맵핑",
+		"COL_auth_seq": "권한 선택",
+		"subTitle": ["권한리스트 노출메뉴 선택"]
 	}
 }
