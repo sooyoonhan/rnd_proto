@@ -8,8 +8,10 @@
 <title>GameName adminTool</title>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+<!--
 <script src='/setting/js/lang.js'></script>
 <script src='/setting/js/menuData.js'></script>
+-->
 
 <link rel='stylesheet' type='text/css' media='all' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'/>
 <link rel='stylesheet' type='text/css' media='all' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'/>
@@ -63,7 +65,7 @@
 			<ul>
 				<li>
 					<a href="view/createAccount/index.html">
-						<span>관리자설정</span>
+						<span>관리자설정_진수</span>
 						<i class="fa fa-angle-down" aria-hidden="true"></i>
 					</a>
 					<ul>
