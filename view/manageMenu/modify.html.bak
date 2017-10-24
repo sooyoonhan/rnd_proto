@@ -38,21 +38,8 @@
 					</th>
 					<td>
 						<select id="depth">
-							<option>대메뉴</option>
-							<option>소메뉴</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">
-						<label for="menu_name">
-							<strong>*</strong>
-							<span>메뉴 선택:</span>
-						</label>
-					</th>
-					<td>
-						<select id="menu_name">
-							<option>메뉴리스트</option>
+							<option value="1">대메뉴</option>
+							<option value="2">소메뉴</option>
 						</select>
 					</td>
 				</tr>
@@ -65,8 +52,31 @@
 					</th>
 					<td>
 						<select id="prt_menu">
-							<option>연결메뉴없음</option>
-							<option>메뉴리스트</option>
+							<option value="0">연결메뉴없음</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="menu_name">
+							<strong>*</strong>
+							<span>메뉴 선택:</span>
+						</label>
+					</th>
+					<td>
+						<input type="text" placeholder="메뉴명 입력" autocomplete="off"  id="menu_name"/>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="url">
+							<strong>*</strong>
+							<span>URL 선택:</span>
+						</label>
+					</th>
+					<td>
+						<select id="url">
+							<option value="url">메뉴명(URL)</option>
 						</select>
 					</td>
 				</tr>
@@ -90,6 +100,6 @@
 	<!--폼종료-->
 </div>
 <!--컨텐츠표시영역종료-->
-<script src='/setting/js/view/createAccount/modify.js'></script>
+<script src='/setting/js/view/manageMenu/modify.js'></script>
 </body>
 </html>

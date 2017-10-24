@@ -181,3 +181,21 @@ function alertMsgPrint(key){
 	location.reload();
 	return false;
 }
+
+//프로토콜호출실패
+function loadProtocalFail(err){
+	alert("Protocal Call Error");
+	
+	//로더비활성화
+	parent.loader.hide();
+	return false;
+}
+
+//json불러오기실패
+function loadJsonFail(err){
+	alert("json Load Error");
+	
+	//로더비활성화
+	parent.loader.hide();
+	return false;
+}

@@ -2,17 +2,11 @@
 init();
 //개별페이지작동시작
 function pageView(){
-	console.log("이제부턴 제가 작동됩니다.");
-	
-	//그리드불러오기
-	loadGrid(1, 1);
-	function loadGrid(page, pageSize, searchText){
-		//searchText디폴트설정
-		if(typeof searchText === "undefined"){
-			searchText = '';
-		}
-		//console.log(languageJSON)
+//	console.log("이제부턴 제가 작동됩니다.");
 
+	//그리드불러오기
+	loadGridAll(1);
+	function loadGridAll(page){
 		//로더활성화
 		parent.loader.show();
 			
@@ -28,31 +22,35 @@ function pageView(){
 		$.ajax({
 			url: protocalURL + "/adminSetting/menu/list",
 			contentType:"application/json",
-			data: JSON.stringify({param: param}),
-			method:"POST",
-			success:function(callback){
-				callback = JSON.parse(callback);
-//				console.log(callback)
+			data: {param: JSON.stringify(param)},
+			method:"GET"
+		}).then(function(callback){
+			loadGridAllSuccess(callback, page);
+		}, loadProtocalFail);
 
-				if(callback["result"] == 1){
-					//에러
-					alert("[Error]\n" + JSON.stringify(callback["msg"]));
-					
-					//로더비활성화
-					parent.loader.hide();
-					return false;
-				} else{
-					//그리드렌더링
-					lenderGrid(callback, page, pageSize);
-				}
+		//전체그리드불러오기성공
+		function loadGridAllSuccess(callback, page){
+			callback = JSON.parse(callback);
+	//		console.log(callback)
+
+			if(callback["result"] == 1){
+				//에러
+				alert("[Error]\n" + JSON.stringify(callback["msg"]));
+				
+				//로더비활성화
+				parent.loader.hide();
+				return false;
+			} else{
+				//그리드렌더링
+				lenderGrid(callback, page);
 			}
-		});
-	};
-	
+		}
+	}
+
 	//그리드렌더링
-	function lenderGrid(gridData, page, pageSize){
-		console.log(gridData);
-		console.log(languageJSON)
+	function lenderGrid(gridData, page){
+//		console.log(gridData);
+//		console.log(languageJSON)
 
 		var container = $("#gridTable");
 		var str = '';
@@ -65,9 +63,22 @@ function pageView(){
 		for(i=0; i<gridData["data"]["rows"].length; i++){
 			str += '<tr>';
 				str += '<td>' + gridData["data"]["rows"][i]["MENU_SEQ"] + '</td>';
-				str += '<td>' + gridData["data"]["rows"][i]["DEPTH"] + '</td>';
+				if(gridData["data"]["rows"][i]["DEPTH"] == 1){
+					//대메뉴
+					str += '<td>' + languageJSON["lang"]["index.html"]["SEL_depth"][0] + '</td>';
+				} else{
+					//소메뉴
+					str += '<td>' + languageJSON["lang"]["index.html"]["SEL_depth"][1] + '</td>';
+				}
 				str += '<td>' + gridData["data"]["rows"][i]["MENU_NAME"] + '</td>';
-				str += '<td>' + gridData["data"]["rows"][i]["PRT_MENU"] + '</td>';
+				if(gridData["data"]["rows"][i]["PRT_MENU_NAME"] == null){
+					//상위메뉴없음
+					str += '<td></td>';
+				} else{
+					//상위메뉴있음
+					str += '<td>' + gridData["data"]["rows"][i]["PRT_MENU_NAME"] + '</td>';
+				}
+				
 				str += '<td>' + gridData["data"]["rows"][i]["ORD"] + '</td>';
 				str += '<td><a href="modify.html?seq=' + gridData["data"]["rows"][i]["MENU_SEQ"] + '" class="btn orangeBtn">수정</a></td>';
 			str += '</tr>';
@@ -129,38 +140,80 @@ function pageView(){
 		parent.loader.hide();
 	}
 
+	//검색그리드불러오기
+	function loadGridSearch(page){
+		//로더활성화
+		parent.loader.show();
+			
+		//전달변수
+		var param = {
+			page: page,
+			pageSize: pageSize,
+			menu_name: $("#menu_name").val()
+		};
+		
+		//검색어가빈칸이면
+		if(param["menu_name"] == ""){
+			//그리드불러오기
+			loadGridAll(1);
+			return false;
+		}
+
+		//서버전달
+//		console.log("검색그리드불러오기전달변수▼");
+//		console.log(JSON.stringify(param))
+		$.ajax({
+			url: protocalURL + "/adminSetting/menu/search",
+			contentType:"application/json",
+			data: {param: JSON.stringify(param)},
+			method:"GET"
+		}).then(function(callback){
+			loadGridSearchSuccess(callback, page);
+		}, loadProtocalFail);
+
+		//검색그리드불러오기성공
+		function loadGridSearchSuccess(callback, page){
+			callback = JSON.parse(callback);
+//			console.log(callback)
+
+			if(callback["result"] == 1){
+				//에러
+				alert("[Error]\n" + JSON.stringify(callback["msg"]));
+				
+				//로더비활성화
+				parent.loader.hide();
+				return false;
+			} else{
+				//그리드렌더링
+				lenderGrid(callback, page);
+			}
+		}
+	};
+
 	//버튼갱신
 	function btnsRefesh(){
 		//그리드페이지버튼클릭
 		var gridPageBtn = $(".gridPage a");
 		gridPageBtn.unbind("click").bind("click", function(e){
 			e.preventDefault();
-
-			loadGrid($(this).attr("data-page"), 1);
+			
+			//검색어유무에따른 분기처리
+			if($("#menu_name").val() != ""){
+				//검색어있음
+				loadGridSearch($(this).attr("data-page"));
+			} else{
+				//검색어없음
+				loadGridAll($(this).attr("data-page"));
+			}
 		})
 
 		//검색하기클릭
 		var searchBtn = $("#searchBtn");
 		searchBtn.on("click", function(e){
 			e.preventDefault();
-
-//			//로더활성화
-//			parent.loader.show();
-//
-//			var searchText = $("#menu_name").val();
-//			searchMenuNameList(searchText,function(lang, error) {
-//				//에러체크
-//				if(error) {
-//					alert(error);
-//
-//					//로더비활성화
-//					parent.loader.hide();
-//					return false;
-//				}
-//
-//				//결과렌더링
-//				lenderGrid(lang);
-//			}, false);
+			
+			//검색그리드불러오기
+			loadGridSearch(1);
 		})
 	}
 }

@@ -24,7 +24,7 @@ function init(){
 	var nation = sessionStorage["langType"];	//국가코드
 	if(typeof nation === "undefined"){
 		alert("세션이 없습니다.");
-		location.href = "/index.html";
+		parent.location.href = "/index.html";
 	}
 
 	//불러올JSON변수불러오기
@@ -174,10 +174,28 @@ function init(){
 function alertMsgPrint(key){
 	alert(languageJSON["alertMsg"][key]);
 
-	//로더활성화
+	로더활성화
 	parent.loader.hide();
 
-	//페이지갱신
+	페이지갱신
 	location.reload();
+	return false;
+}
+
+//프로토콜호출실패
+function loadProtocalFail(err){
+	alert("Protocal Call Error");
+	
+	//로더비활성화
+	parent.loader.hide();
+	return false;
+}
+
+//json불러오기실패
+function loadJsonFail(err){
+	alert("json Load Error");
+	
+	//로더비활성화
+	parent.loader.hide();
 	return false;
 }

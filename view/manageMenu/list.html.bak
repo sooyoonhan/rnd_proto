@@ -79,7 +79,7 @@
 			<li><a href="#" class="lastBtn">Last</a></li>
 			-->
 		</ul>
-		<p>23 of 99</p>
+		<p><!--23 of 99--></p>
 	</div>
 	<!--검색결과표시종료-->
 </div>

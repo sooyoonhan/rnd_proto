@@ -2,32 +2,70 @@
 init();
 //개별페이지작동시작
 function pageView(){
-	console.log("이제부턴 제가 작동됩니다.");
+//	console.log("이제부턴 제가 작동됩니다.");
 
-	//메뉴리스트불러오기
-	loadMenuList();
-	function loadMenuList(){
-		$.getJSON(
-			"/setting/lang/" + sessionStorage["langType"] + "/common/menuData.json",
-			function(callback){
-				console.log("menuData.json로딩완료▼")
-				console.log(callback)
-				
-				//메뉴렌더링
-				var container = $("#url");
-				var str = '';
-				for(var i=0; i<callback["menu"].length; i++){
-					str += '<option value="' + callback["menu"][i]["url"] + '">' + callback["menu"][i]["menuName"] + '(' + callback["menu"][i]["url"] + ')</option>'
-				}
-				container.html(str);
+	//상위메뉴리스트불러오기
+	var loadParentMenu = $.ajax({
+		url: protocalURL + "/adminSetting/menu/get",
+		contentType:"text",
+		data: {param: JSON.stringify({depth:1})},
+		method:"GET"
+	}).then(loadParentMenuSuccess, loadProtocalFail);
 
-				//버튼갱신
-				btnsRefesh();
+	//상위메뉴리스트불러오기성공
+	function loadParentMenuSuccess(callback){
+		callback = JSON.parse(callback);
+//		console.log(callback);
 
-				//로더비활성화
-				parent.loader.hide();
+		if(callback["result"] == 1){
+			//에러
+			alert("[Error]\n" + JSON.stringify(callback["msg"]));
+	
+			//로더비활성화
+			parent.loader.hide();
+			return false;
+		} else{
+			//정상작동
+
+			//상위메뉴선택렌더링
+			var container = $("#prt_menu");
+			var str = '';
+			for(var i=0; i<callback["data"].length; i++){
+				str += '<option value=' + callback["data"][i]["MENU_SEQ"] + '>' + callback["data"][i]["MENU_NAME"] + '</option>';
 			}
-		);
+			container.append(str);
+		}
+	}
+
+	//URL선택불러오기
+	var loadJSONURL = $.ajax({
+		url: "/setting/lang/" + sessionStorage["langType"] + "/common/menuData.json",
+		contentType:"text",
+		method:"GET"
+	}).then(loadURLSuccess, loadJsonFail);
+
+	//URL선택불러오기성공
+	function loadURLSuccess(callback){
+//		console.log("menuData.json로딩완료▼")
+//		console.log(callback)
+
+		//메뉴렌더링
+		var container = $("#url");
+		var str = '';
+		for(var i=0; i<callback["menu"].length; i++){
+			str += '<option value="' + callback["menu"][i]["url"] + '">' + callback["menu"][i]["menuName"] + '(' + callback["menu"][i]["url"] + ')</option>'
+		}
+		container.html(str);
+	}
+
+	//상위메뉴리스트불러오기, URL선택불러오기 동기화되면 실행
+	$.when(loadParentMenu, loadJSONURL).done(whenDo);
+	function whenDo(){
+		//버튼갱신
+		btnsRefesh();
+
+		//로더비활성화
+		parent.loader.hide();
 	}
 
 	//버튼갱신
@@ -64,16 +102,17 @@ function pageView(){
 			}
 
 			//서버전달
-			console.log("메뉴등록전달변수▼");
-			console.log(JSON.stringify(param))
+//			console.log("메뉴등록전달변수▼");
+//			console.log(JSON.stringify(param))
 			$.ajax({
 				url: protocalURL + "/adminSetting/menu/set",
 				contentType:"application/json",
 				data: JSON.stringify({param: param}),
 				method:"POST",
+				error: loadProtocalFail,
 				success:function(callback){
 					callback = JSON.parse(callback);
-					console.log(callback)
+//					console.log(callback)
 
 					if(callback["result"] == 1){
 						//에러

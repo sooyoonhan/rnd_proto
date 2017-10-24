@@ -1,6 +1,5 @@
 //jquery
-document.write("<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>");
-//document.write("<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>");
+document.write("<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>");
 //reset_CSS
 document.write("<link rel='stylesheet' type='text/css' media='all' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'/>");
 //page_CSS
@@ -8,5 +7,14 @@ document.write("<link rel='stylesheet' type='text/css' media='all' href='/settin
 //서브페이지언어팩번역
 document.write("<script src='/setting/js/init.js'></script>");
 
+
+/*
+	여기서부턴 글로벌 변수입니다.
+*/
+
+
 //프로토콜호출URL
 var protocalURL = "http://106.241.53.172:3000";
+
+//리스트표시갯수
+var pageSize = 50;
