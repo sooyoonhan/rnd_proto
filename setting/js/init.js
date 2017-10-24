@@ -24,7 +24,7 @@ function init(){
 	var nation = sessionStorage["langType"];	//국가코드
 	if(typeof nation === "undefined"){
 		alert("세션이 없습니다.");
-		location.href = "index.html";
+		parent.location.href = "/index.html";
 	}
 
 	//불러올JSON변수불러오기
