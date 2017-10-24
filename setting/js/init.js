@@ -94,9 +94,9 @@ function init(){
 
 		//현재페이지언어팩JSON
 		var keyJSON = languageJSON["lang"][key];
-
+		
 		//서브타이틀디폴트셋팅
-		if(typeof keyJSON["subTitle"] === "undefined"){
+		if(typeof keyJSON["subTitle"] == "undefined"){
 			keyJSON["subTitle"] = [];
 		}
 

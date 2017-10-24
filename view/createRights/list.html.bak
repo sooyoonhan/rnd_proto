@@ -56,10 +56,25 @@
 			<td><a href="modify.html" class="btn orangeBtn">수정</a></td>
 		</tr>
 	</table>
+	<div class="gridPage">
+		<ul>
+			<!--
+			<li><a href="#" class="firstBtn">First</a></li>
+			<li><a href="#" class="prevBtn">Prev</a></li>
+			<li><a href="#" class="ov">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#" class="nextBtn">Next</a></li>
+			<li><a href="#" class="lastBtn">Last</a></li>
+			-->
+		</ul>
+		<p><!--23 of 99--></p>
+	</div>
 	<!--검색결과표시종료-->
 </div>
 <!--컨텐츠표시영역종료-->
-<script src='/setting/js/viewLanguage.js'></script>
 <script src='/setting/js/view/createRights/list.js'></script>
 </body>
 </html>
